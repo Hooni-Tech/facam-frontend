@@ -24,15 +24,4 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"mhoonkim-front","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
-  files: 
-    - 'image*.json'
-    - 'appspec.yaml'
-    - 'taskdef.json'
-  secondary-artifacts:
-    DefinitionArtifact:
-      files:
-        - appspec.yaml
-        - taskdef.json
-    ImageArtifact:
-      files:
-        - imagedefinitions.json    
+    files: imagedefinitions.json
