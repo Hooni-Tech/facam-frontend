@@ -7,6 +7,8 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 RUN npm install --silent
 #RUN npm install react-scripts@3.4.1 -g --silent
+## 의존성으로 아래와 같이 변경
+RUN npm install @babel/core@^7.16.0 babel-preset-react-app@^10.0.0 --silent
 
 # 소스를 작업폴더로 복사하고 빌드
 COPY . /usr/src/app
